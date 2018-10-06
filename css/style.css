@@ -30,6 +30,17 @@ button, strong {
 h1 {
     background-color: #3F51B5;
     color: white;
+    height: auto;
+    line-height: 56px;
+    padding-right: 16px; 
+    position: fixed;
+}
+
+/* left indent location of Moocus img */
+#position{
+    height: 56px; 
+    position:absolute; 
+    left:16px;
 }
 
 
@@ -41,6 +52,9 @@ ul {
     background-color: white;
     /* #3 #channels #bullets removed */
     list-style-type: none;
+    position: relative;
+    top:56px;
+       
 }
 
 li {
@@ -64,6 +78,42 @@ li img {
     vertical-align: middle;
 }
 
+/* right alignment for channel img */
+.channel-meta {
+    position: absolute;
+    right: 0px;
+}
+
+/* splitting the channels area to left 40% */
+#channels {
+    position: absolute;
+    left : 0px;
+    width: 40%;
+    height: 100%;
+    overflow: auto;
+}
+/* left indent for text "Chatter/App */
+#channels h1 {
+    padding-left: 70px;  
+    width: 40%;
+}
+
+/* splitting the chat area to right 40% */
+#chat {
+    position: absolute;
+    right : 0px;
+    width: 60%;
+    height: 100%;
+    
+}
+
+/* left indent for text #SevenContinents by...  */
+#chat {
+    padding-left: 16px;  
+    width: 60%;
+    overflow: auto;
+}
+
 /* TAB BAR */
 
 /* #4 #sweat #tab-bar */
@@ -72,6 +122,21 @@ li img {
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 40%;
+    display: flex;
+}
+
+#chat-bar {
+    /* chat-bar #container should be white */
+    background-color: white;
+    /* #3 #tab-bar #container has all buttons centered */
+    text-align: left;
+    position: fixed;
+    bottom: 0px;
+    width: 60%;
+    display: flex;
 }
 
 /* #4 add styles to #tab-bar #buttons */
@@ -85,6 +150,27 @@ li img {
     height: 72px;
     padding: 16px;
 }
+/* add styles to #tchat-bar #buttons */
+#emojis-button {
+    background-color: white;
+    border: none;
+    font-size: 13px;
+    height: 72px;
+    padding-left: 16px;
+}
+
+#emojis {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    padding: 16px;
+    background-color: white;
+    position:absolute;
+    bottom: 50px;
+    left: 16px;
+    border: 1px solid black;
+}
+
 
 /* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
 #tab-bar button img {
@@ -110,6 +196,11 @@ li img {
 
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+
+    position: relative;
+    top: 56px;
+    
+       
 }
 
 
@@ -130,12 +221,19 @@ li img {
 .message p {
     background-color: white;
     padding: 16px;
+    position: relative;
+    
+    
 }
 
-.message button {
+.message p button {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    
 }
 
 /* #4 left align own #messages using #margins */
