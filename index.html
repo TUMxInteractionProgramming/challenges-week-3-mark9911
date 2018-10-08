@@ -9,7 +9,11 @@
 
     <!-- #4 #sweat out the styles by creating an #external css -->
     <link rel="stylesheet" href="css/style.css" />
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
     
 </head>
 <body>
@@ -23,26 +27,27 @@
 
     <!-- #3 #channels #list is much better, than headlines or paragraphs... -->
     <ul>
-        <li>#Yummy
+        <li onclick="switchChannel('Yummy','upgrading.never.helps')">#Yummy
+            <!-- right align the star and chevron-right-->
             <span class="channel-meta">
             <!-- #3 #channels #favorite this is not starred -->
             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
              <!-- Right chervron-->
-            <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="checron right">
+            <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
             </span>
         </li>
 
         <!-- #4 #channel is #highlighted -->
-        <li class="selected">
+        <li class="selected" onclick="switchChannel('SevenContinents','upgrading.never.helps')">
             #SevenContinents
             <span class="channel-meta">
             <!-- #3 #channels #favorite this is starred -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
             <!-- Right chervron-->
-            <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="checron right">
+            <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right">
             </span>
         </li>
-        <li>#KillerApp
+        <li onclick="switchChannel('KillerApp','upgrading.never.helps')">#KillerApp
             <span class="channel-meta">
             <!-- #3 #channels #favorite this is not starred -->
             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
@@ -50,7 +55,7 @@
             <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="checron right">
             </span>
         </li>
-        <li>#FirstPersonOnMars
+        <li onclick="switchChannel('FirstPersonOnMars','upgrading.never.helps')">#FirstPersonOnMars
             <span class="channel-meta">
             <!-- #3 #channels #favorite this is starred -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
@@ -58,7 +63,7 @@
             <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="checron right">
             </span>
         </li>
-        <li>#Octoberfest
+        <li onclick="switchChannel('Octoberfest','upgrading.never.helps')">#Octoberfest
             <span class="channel-meta">
             <!-- #3 #channels #favorite this is not starred -->
             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
@@ -73,17 +78,17 @@
     <!-- #4 #sweat #tab-bar -->
     <div id="tab-bar">
         <!-- #4 #tab-bar selected channel should be #highlighted -->
-        <button class="selected">
+        <button class="selected" id="New" onclick="selectTab('New')">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/lightbulb-o.png" alt="Bulb">
             New
         </button>
-        <button>
+        <button id="Trending" onclick="selectTab('Trending')">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/fire.png" alt="Hot">
             Trending
         </button>
-        <button>
+        <button id="Favourites" onclick="selectTab('Favourites')">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star">
             Favorites
@@ -94,10 +99,18 @@
 <!-- #4 #one #page -->
 <div id="chat">
     <h1>
-        #SevenContinents
-        <small>by
-            <strong>cheeses.yard.applies</strong>
+        <!-- need selector for function switchChannel() -->
+        <span class="Channelname">SevenContinents</span>
+        <small id="place">by
+            <!-- #3 #chat #location points to w3w in a new tab -->
+            <a href="http://w3w.co/cheeses.yard.applies" target="_blank">
+            <strong class="place">cheeses.yard.applies</strong>
+            </a>
         </small>
+         <!-- #3 #channels #favorite this is starred -->
+         <span id="c-meta" onclick="starFill()">
+         <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+         </span>
     </h1>
 
     <!-- #3 #chat #container -->
@@ -187,7 +200,7 @@
 
     <!-- Add smileys  -->
     <div id="chat-bar">
-        <button id="emojis-button">
+        <button id="emojis-button" onclick="showBox()">
         <img src="http://ip.lfe.mw.tum.de/sections/smile-o.png">
         </button>
         <div id="emojis">😁😂😃😀😅😆😇
